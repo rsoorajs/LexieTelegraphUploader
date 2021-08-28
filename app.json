@@ -1,0 +1,23 @@
+  
+{
+  "name": "Telegraph uploader bot",
+  "description": "A bot to upload post to telegraph",
+  "repository": "https://github.com/viharasenindu/LexieTelegraphUploader",
+  "logo": "https://telegra.ph/file/1813376034f33f4111a5c.jpg",
+  "keywords": ["telegram", "telegraph", "imageuploader","telegram bot"],
+  "env": {
+     "BOT_TOKEN": {
+      "description": "Your Bot token from @Botfather"
+    },
+    "API_ID": {
+      "description": "Your API_ID from https://my.telegram.org/apps "
+    },
+    "API_HASH": {
+      "description": "Your API_HASH from https://my.telegram.org/apps"
+    }
+   },
+   "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
