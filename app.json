@@ -1,9 +1,8 @@
-  
 {
-  "name": "Telegraph uploader bot",
-  "description": "A bot to upload post to telegraph",
+  "name": "Image upload bot",
+  "description": "A bot to upload telegram images to telegraph",
   "repository": "https://github.com/viharasenindu/LexieTelegraphUploader",
-  "logo": "https://telegra.ph/file/1813376034f33f4111a5c.jpg",
+  "logo": "https://telegra.ph/file/33adaf8d6c398edf81967.jpg",
   "keywords": ["telegram", "telegraph", "imageuploader","telegram bot"],
   "env": {
      "BOT_TOKEN": {
@@ -21,3 +20,4 @@
       "url": "heroku/python"
     }
   ]
+}
