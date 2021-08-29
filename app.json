@@ -2,7 +2,7 @@
   "name": "Telegraph Uploader bot",
   "description": "A bot to upload telegram images to telegraph",
   "repository": "https://github.com/viharasenindu/LexieTelegraphUploader",
-  "logo": "https://telegra.ph/file/33adaf8d6c398edf81967.jpg",
+  "logo": "https://telegra.ph/file/7541d1249e4f1a3740357.jpg",
   "keywords": ["telegram", "telegraph", "telegraphuploader","telegram bot"],
   "env": {
      "BOT_TOKEN": {
