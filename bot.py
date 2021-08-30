@@ -46,6 +46,4 @@ async def getimage(client, message):
        ),
  
     os.remove(img_path)
-
-
 tgraph.run()
