@@ -12,7 +12,7 @@ JOIN_ASAP = "<b>You can't use this command untill you subscribe my channel</b> "
 
 FSUBB = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton(text="  Join My Channel 🔔 ", url=f"https://t.me/ceylonlk") 
+        InlineKeyboardButton(text="  Join My Channel 🔔 ", url=f"https://t.me/Lexiebotupdate") 
         ]]
     )        
 
@@ -25,14 +25,16 @@ tgraph = Client(
 
 
 @tgraph.on_message(filters.command("start"))
-async def start(client, message):
-        try:
-        await message._client.get_chat_member(int("-1001525259563"), message.from_user.id)
+@errors
+async def start(_, message: Message):
+   if message.chat.type == 'private': 
+    try:
+        await message._client.get_chat_member(int("-1001267157538"), message.from_user.id)
     except UserNotParticipant:
         await message.reply_text(
         text=JOIN_ASAP, disable_web_page_preview=True, reply_markup=FSUBB
     )
-        return 
+        return
     await message.reply_text(
         text=f"Hello {message.from_user.mention},\nI'm Telegraph Uploader Bot",
         disable_web_page_preview=True
