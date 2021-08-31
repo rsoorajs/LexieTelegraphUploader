@@ -25,7 +25,7 @@ tgraph = Client(
 
 
 @tgraph.on_message(filters.command("start"))
-@errors
+
 async def start(_, message: Message):
    if message.chat.type == 'private': 
     try:
