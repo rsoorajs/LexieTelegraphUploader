@@ -26,8 +26,8 @@ tgraph = Client(
 
 @tgraph.on_message(filters.command("start"))
 
-async def start(_, message: Message):
-   if message.chat.type == 'private': 
+async def start( _, message: Message):
+   if message.chat.type = 'private': 
     try:
         await message._client.get_chat_member(int("-1001267157538"), message.from_user.id)
     except UserNotParticipant:
