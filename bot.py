@@ -26,7 +26,7 @@ tgraph = Client(
 
 @tgraph.on_message(filters.command("start"))
 
-async def start(client,message):
+async def start(Client,message):
     try:
         await message.client.get_chat_member(int("-1001267157538"), message.from_user.id)
     except UserNotParticipant:
@@ -41,7 +41,7 @@ async def start(client,message):
 
 
 @tgraph.on_message(filters.photo)
-async def getimage(client, message):
+async def getimage(Client, message):
     dwn = await message.reply_text("Downloading...", True)
     img_path = await message.download()
     await dwn.edit_text("Uploading...")
