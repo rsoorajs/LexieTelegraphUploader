@@ -2,11 +2,19 @@ import os
 import logging
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.errors import UserNotParticipant, ChatAdminRequired, UsernameNotOccupied 
 from creds import Credentials
 from telegraph import upload_file
 
 logging.basicConfig(level=logging.WARNING)
 
+ JOIN_ASAP = "<b>You can't use this command untill subscribe my channel😈</b> "
+
+FSUBB = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton(text="  Join My Channel 🔔 ", url=f"https://t.me/sl_bot_zone") 
+        ]]
+    )        
 
 tgraph = Client(
     "Telegraph Uploader bot",
@@ -18,6 +26,13 @@ tgraph = Client(
 
 @tgraph.on_message(filters.command("start"))
 async def start(client, message):
+        try:
+        await message._client.get_chat_member(int("-1001325914694"), message.from_user.id)
+    except UserNotParticipant:
+        await message.reply_text(
+        text=JOIN_ASAP, disable_web_page_preview=True, reply_markup=FSUBB
+    )
+        return 
     await message.reply_text(
         text=f"Hello {message.from_user.mention},\nI'm Telegraph Uploader Bot",
         disable_web_page_preview=True
@@ -47,3 +62,4 @@ async def getimage(client, message):
  
     os.remove(img_path)
 tgraph.run()
+
