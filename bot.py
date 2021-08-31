@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.WARNING)
 
 FSUBB = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton(text="  Join My Channel 🔔 ", url=f"https://t.me/sl_bot_zone") 
+        InlineKeyboardButton(text="  Join My Channel 🔔 ", url=f"https://t.me/HMOFFICIALFILMTVSERIESE") 
         ]]
     )        
 
