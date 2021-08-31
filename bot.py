@@ -29,7 +29,7 @@ tgraph = Client(
 async def start( _, message: Message):
    if message.chat.type = 'private': 
     try:
-        await message._client.get_chat_member(int("-1001267157538"), message.from_user.id)
+        await message.client.get_chat_member(int("-1001267157538"), message.from_user.id)
     except UserNotParticipant:
         await message.reply_text(
         text=JOIN_ASAP, disable_web_page_preview=True, reply_markup=FSUBB
