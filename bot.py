@@ -8,7 +8,7 @@ from telegraph import upload_file
 
 logging.basicConfig(level=logging.WARNING)
 
- JOIN_ASAP = "<b>You can't use this command untill subscribe my channel😈</b> "
+JOIN_ASAP = "<b>You can't use this command untill you subscribe my channel😈</b> "
 
 FSUBB = InlineKeyboardMarkup(
         [[
