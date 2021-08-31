@@ -1,13 +1,20 @@
-  
 import os
 import logging
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.errors import UserNotParticipant, ChatAdminRequired, UsernameNotOccupied 
 from creds import Credentials
 from telegraph import upload_file
 
 logging.basicConfig(level=logging.WARNING)
 
+JOIN_ASAP = "<b>You can't use this command untill you subscribe my channel😈</b> "
+
+FSUBB = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton(text="  Join My Channel 🔔 ", url=f"https://t.me/Ceylonlk") 
+        ]]
+    )        
 
 tgraph = Client(
     "Telegraph Uploader bot",
@@ -19,6 +26,13 @@ tgraph = Client(
 
 @tgraph.on_message(filters.command("start"))
 async def start(client, message):
+        try:
+        await message._client.get_chat_member(int("-1001525259563"), message.from_user.id)
+    except UserNotParticipant:
+        await message.reply_text(
+        text=JOIN_ASAP, disable_web_page_preview=True, reply_markup=FSUBB
+    )
+        return 
     await message.reply_text(
         text=f"Hello {message.from_user.mention},\nI'm Telegraph Uploader Bot",
         disable_web_page_preview=True
@@ -38,21 +52,13 @@ async def getimage(client, message):
     await dwn.edit_text(
         text=f"<b>Link :-</b> <code>https://telegra.ph{url_path}</code>",
         disable_web_page_preview=True,
-       reply_markup=InlineKeyboardMarkup(
+        reply_markup=InlineKeyboardMarkup(
             [
-                [
-                    InlineKeyboardButton(
-                        text="Open Link", url=f"https://telegra.ph{url_path}"
-                    ),
-                    InlineKeyboardButton(
-                        text="Share Link",
-                        url=f"https://telegram.me/share/url?url=https://telegra.ph{url_path}",
-                    )
-                ]
+                   InlineKeyboardButton(
+                        text="Open Link", url=f"https://telegra.ph{url_path}")
             ]
-        )
-    )
+                  
+       ),
+ 
     os.remove(img_path)
-
-
 tgraph.run()
