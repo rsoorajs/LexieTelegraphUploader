@@ -1,7 +1,7 @@
 import os
 import logging
 from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, InputTextMessageContent
 from pyrogram.errors import UserNotParticipant, ChatAdminRequired, UsernameNotOccupied 
 from creds import Credentials
 from telegraph import upload_file
