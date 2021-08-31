@@ -54,11 +54,19 @@ async def getimage(client, message):
         disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup(
             [
-                   InlineKeyboardButton(
-                        text="Open Link", url=f"https://telegra.ph{url_path}")
+                [
+                    InlineKeyboardButton(
+                        text="Open Link", url=f"https://telegra.ph{url_path}"
+                    ),
+                    InlineKeyboardButton(
+                        text="Share Link",
+                        url=f"https://telegram.me/share/url?url=https://telegra.ph{url_path}",
+                    )
+                ]
             ]
-                  
-       ),
- 
+        )
+    )
     os.remove(img_path)
+
+
 tgraph.run()
