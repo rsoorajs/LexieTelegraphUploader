@@ -29,8 +29,8 @@ tgraph = Client(
 async def start(c: Client, message: Message):
     if (int("--1001525259563")) is not None:
         try:
-            user = await c.get_chat_member(int("-1001525259563")), message.chat.id')'
-            if user.status == "kicked":)
+            user = await c.get_chat_member(int("-1001525259563")), message.chat.id
+            if user.status == "kicked"
                 await c.send_message('hi')
 
         return
