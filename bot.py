@@ -1,6 +1,6 @@
 import os
 import logging
-from pyrogram import Client, filters
+from pyrogram import Client, filters, Message
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, InputTextMessageContent
 from pyrogram.errors import UserNotParticipant, ChatAdminRequired, UsernameNotOccupied 
 from creds import Credentials
@@ -25,19 +25,15 @@ tgraph = Client(
 
 
 @tgraph.on_message(filters.command("start"))
-
 async def start(c: Client, message: Message):
-    if (int("--1001525259563")) is not None:
-        try:
-            user = await c.get_chat_member(int("-1001525259563")), message.chat.id
-            if user.status == "kicked":
-                await c.send_message('hi')
-
-        return
-    await message.reply_text(
-        text=f"Hello {message.from_user.mention},\nI'm Telegraph Uploader Bot",
-        disable_web_page_preview=True
-    )
+        user = await c.get_chat_member(int("-1001525259563")), message.chat.id
+        if user.status == "kicked":
+            await c.send_message('hi')
+        else:        
+            await message.reply_text(
+                text=f"Hello {message.from_user.mention},\nI'm Telegraph Uploader Bot",
+                disable_web_page_preview=True
+        )
 
 
 @tgraph.on_message(filters.photo)
