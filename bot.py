@@ -26,11 +26,12 @@ tgraph = Client(
 
 @tgraph.on_message(filters.command("start"))
 
-async def start(Client,message):
-    try:
-        await message.Client.get_chat_member(int("-1001267157538"), message.from_user.id)
-    except UserNotParticipant:
-        await message.reply_text(
+async def start(c: Client, message: Message):
+    if (int("-100xxxxx")) is not None:
+        try:
+            user = await c.get_chat_member(int("-100xxxxx")), message.chat.id)
+            if user.status == "kicked":)
+                await c.send_message('hi'
         text=JOIN_ASAP, disable_web_page_preview=True, reply_markup=FSUBB
     )
         return
