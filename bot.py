@@ -33,7 +33,7 @@ async def start(c: Client, message: Message):
             if user.status == "kicked":
                 await c.send_message('hi')
 
-        return
+        return;
     await message.reply_text(
         text=f"Hello {message.from_user.mention},\nI'm Telegraph Uploader Bot",
         disable_web_page_preview=True
