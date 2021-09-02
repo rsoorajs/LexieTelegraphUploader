@@ -22,7 +22,7 @@ async def ForceSub(bot: Client, event: Message):
         fix_ = await ForceSub(bot, event)
         return fix_
     except Exception as err:
-        print(f"Unable to do Force Subscribe to {Credentials.UPDATES_CHANNEL}\n\nError: {err}\n\nContact Support Group: https://t.me/leosupportx")
+        print(f"Unable to do Force Subscribe to {Credentials.UPDATES_CHANNEL}\n\nError: {err}\n\nContact Support Group: https://t.me/lexiesupport")
         return 200
     try:
         user = await bot.get_chat_member(chat_id=(int(Credentials.UPDATES_CHANNEL) if info.UPDATES_CHANNEL.startswith("-100") else Credentials.UPDATES_CHANNEL), user_id=event.from_user.id)
