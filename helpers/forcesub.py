@@ -1,5 +1,5 @@
 import asyncio
-import info
+from creds import UPDATES_CHANNEL
 from pyrogram import Client
 from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
