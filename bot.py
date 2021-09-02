@@ -3,7 +3,7 @@ import logging
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, InputTextMessageContent, Message
 from pyrogram.errors import UserNotParticipant, ChatAdminRequired, UsernameNotOccupied 
-from helpers.forcesub import ForceSub
+from helpers.Forcesub import ForceSub
 from creds import Credentials
 from telegraph import upload_file
 
