@@ -13,6 +13,9 @@
     },
     "API_HASH": {
       "description": "Your API_HASH from https://my.telegram.org/apps"
+    },
+    "UPDATES_CHANNEL": {
+      "description": "Channel ID For Force Subscribers"
     }
    },
    "buildpacks": [
